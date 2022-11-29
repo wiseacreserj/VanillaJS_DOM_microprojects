@@ -4,7 +4,8 @@
     --color-black-primary: rgb(34, 34, 34);
     --color-black-secondary: rgb(16, 42, 66);
     --color-blue-light-1: rgb(84,166,234);
-    --bg-color: rgb(241, 245, 248)
+    --bg-color-main: rgb(241, 245, 248)
+    
 }
 
 * {
@@ -20,6 +21,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg-color-main);
 }
 
 
@@ -27,7 +29,11 @@ main {
 .content {
     width: 80vw;
     max-width: 620px;
-    border: 1px solid black;
+   /*  border: 1px solid black; */
+}
+
+.title-container {
+    margin-bottom: 60px;
 }
 
 .title {
@@ -51,5 +57,38 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid black
+    align-items: center;
+    padding: 1.5rem 2rem;
+    box-shadow:  0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+   /*  border: 1px solid black */
+}
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.person-img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#surpriseBtn {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
 }
