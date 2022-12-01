@@ -33,9 +33,6 @@ const surpriseBtn = document.querySelector("#surpriseBtn");
 let reviewIndex = 0;
 
 const renderReview = (reviewIndex) => {
-    console.log("review index: ", reviewIndex);
-    console.log(reviewes[reviewIndex]);
-
     const { name, position, text, img } = reviewes[reviewIndex];
     reviewContainer.innerHTML = "";
     const template = `
@@ -50,6 +47,14 @@ const renderReview = (reviewIndex) => {
     <p class="review-text">${text}
     </p>`;
     reviewContainer.innerHTML = template;
+};
+
+const getRandomReviewIndex = () => {
+    return Math.floor(Math.random() * reviewes.length);
+};
+
+const initApp = () => {
+    renderReview(0);
 };
 
 prevBtn.addEventListener("click", () => {
@@ -73,6 +78,8 @@ nextBtn.addEventListener("click", () => {
 });
 
 surpriseBtn.addEventListener("click", () => {
-    const randomReviewIndex = Math.floor(Math.random() * reviewes.length);
+    let randomReviewIndex = getRandomReviewIndex();
     renderReview(randomReviewIndex);
 });
+
+initApp();
