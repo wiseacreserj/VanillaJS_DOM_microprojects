@@ -1,9 +1,10 @@
-const mobileLinksContainer = document.querySelector(".mobile-links-container");
+const sidebar = document.querySelector(".sidebar");
 const menuBtn = document.querySelector(".menu-icon");
+const closeMenuBtn = document.querySelector(".close-btn");
 
-/* window.addEventListener("resize", () => {
-    if (window.innerWidth >= 850) {
-        mobileLinksContainer.style.display = "none";
-    }
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("show");
 });
- */
+closeMenuBtn.addEventListener("click", () => {
+    sidebar.classList.remove("show");
+});

@@ -39,6 +39,12 @@ h1 span {
     color: rgb(73, 166, 233);
 }
 
+
+@keyframes scale {
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -46,9 +52,14 @@ h1 span {
     position: relative;
     width: 400px;
     height: 100vh;
+    left: -400px ;
     background-color: white;
-    transition: width 0.5s;
+    transition: all 0.5s;
 
+}
+
+.show {
+    left: 0px;
 }
 
 .logo-container {
@@ -65,6 +76,11 @@ h1 span {
     background: transparent;
     cursor: pointer;
     color: rgb(182, 6, 6);
+    transition: transform 0.3s linear;
+}
+
+.close-btn:hover {
+    transform: rotate(360deg);
 }
 
 .social-wrapper {
@@ -94,12 +110,13 @@ h1 span {
     line-height: 70px;
     height: 70px;
     margin: 0 auto;
-    padding-left: 15px;
-    transition: all 0.3s ease-in;
+    padding-left: 20px;
+    opacity: 0.8;
 }
 
 
 .links-list .nav-link:hover {
+    transition: all 0.3s ease-in-out;
     background-color: rgb(132, 186, 224);
     padding-left: 30px;
 }
@@ -128,26 +145,36 @@ h1 span {
 .social-link {
     color: rgb(73, 166, 233);
     font-size: 1.5rem;
-
+    transition: all 0.3s ease-out;
 }
+
+.social-link:hover {
+    color:rgb(40, 55, 65) 
+}
+
 
 .menu-icon {
     display: block;
     position: absolute;
-    top: 20px;
-    right: 20px;
-  
+    top: 40px;
+    right: 40px;
+    font-size: 2rem;
+    color:  rgb(73, 166, 233);
+    cursor:pointer;
+    animation: scale 2s linear 0s infinite;
 }
 
-.close-btn {
-  
-}
 
 @media  screen and (max-width: 650px) {
     .sidebar {
         width: 100%;
         z-index: 100;
-        transition: width 0.5s;
+        left: -650px;
+        transition: all 0.5s;
+    }
+    
+    .show {
+        left: 0px;
     }
     
 }
