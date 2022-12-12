@@ -1,7 +1,8 @@
 :root {
     
     --fnt-open-sans: "Open Sans", sans-serif;
-    --letter-spacing-main: 0.1rem;
+    --fnt-roboto: "Roboto", sans-serif;
+    --letter-spacing-main: 0.275rem;
     --color-black-primary: rgb(34, 34, 34);
     --color-black-secondary: rgb(16, 42, 66);
     --color-blue-light-1: rgb(84,166,234);
@@ -24,9 +25,109 @@ body {
 }
 
 main {
-    width: 100vw;
+    align-items: center;
+    background: url("../assets/img/bg-image.jpeg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
+    justify-content: center;
+    width: 100vw;
 }
 
-    
+h1 {
+    color: #102a42;
+    font-family: var(--fnt-roboto);
+    font-size: 4rem;
+    letter-spacing: var(--letter-spacing-main);
+    padding-top: 4rem;
+}
 
+.container {
+    background-color: white;
+    border-radius: 15px;
+    max-width: 620px;
+    text-align: center;
+    width: 90%;
+}    
+
+.open-modal-btn {
+    background-color: #49a6e9;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: var(--letter-spacing-main);
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-out;
+}
+
+.open-modal-btn:hover {
+    background-color: white;
+    color:#49a6e9 ;
+    outline: 2px solid #49a6e9;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+.modal__overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(92, 90, 226, 0.8);
+    
+}
+
+.modal__content {
+    position: relative;
+    align-items: center;
+    background-color: white;
+    color: #102a42;
+    display: flex;
+    font-family: var(--fnt-roboto);
+    font-size: 2rem;
+    font-weight: 900;
+    height: 30vh;
+    justify-content: center;
+    letter-spacing: var(--letter-spacing-main);
+    max-width: 620px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 90vw;
+    z-index: 100;
+}
+
+.close-modal-btn {
+    position: absolute;
+    font-size: 2rem;
+    color: rgb(151, 31, 31);
+    border: none;
+    background: transparent;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.close-modal-btn:hover {
+    transform: scale(1.5);
+}
+
+.show-modal {
+    display: block;
+}
