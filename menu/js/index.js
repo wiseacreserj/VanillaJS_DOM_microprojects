@@ -112,8 +112,8 @@ function renderMenu(data, type = "all") {
     });
 }
 
-const ininApp = () => {
+const initApp = () => {
     renderMenu(data);
 };
 
-ininApp();
+initApp();
