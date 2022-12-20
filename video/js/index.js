@@ -1,24 +1,23 @@
-console.time("start render");
-
 const preload = document.querySelector(".preload-img");
 const videoContainer = document.querySelector(".c-video-container");
 const video = document.querySelector(".c-video-container__bg-video");
+const videoControl = document.querySelector(".c-video-control");
+const videoControlSwitch = document.querySelector(".c-video-control__switch");
 
-/* console.log(preload); */
-console.log(videoContainer);
-console.log(video);
+videoControl.addEventListener("click", () => {
+    videoControlSwitch.classList.toggle("c-video-control__switch--slided");
+    if (
+        videoControlSwitch.classList.contains("c-video-control__switch--slided")
+    ) {
+        video.pause();
+    } else {
+        video.play();
+    }
+});
 
-function videoHandler() {
-    console.time();
-    console.log("can play comlete");
+function showVideoBackground() {
     preload.style.display = "none";
     videoContainer.style.display = "flex";
-    console.timeEnd();
 }
 
-video.addEventListener("canplaythrough", videoHandler);
-if (video.readyState > 3) {
-    videoHandler();
-}
-
-console.timeEnd("start render");
+window.addEventListener("load", showVideoBackground);
