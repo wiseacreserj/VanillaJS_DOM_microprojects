@@ -22,3 +22,58 @@
     padding: 0;
 }
 
+.c-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100vw; */
+    min-height: 100vh;
+    padding: 1rem 1.5rem;
+    background-image: url("../assets/img/banner.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;    
+}
+
+.l-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.c-header__logo {
+    height: 50px;    
+}
+
+.c-header__logo__img {
+    height: 100%;
+}
+
+.c-header__menu {
+    display: none;
+}
+
+.l-nav-container {
+    display: flex;
+    list-style: none;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    text-transform: capitalize;
+    margin: 0 1rem;
+    font-family: var(--fnt-open-sans);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    letter-spacing: var(--letter-spacing-main);
+    color: white;
+}
+
+.c-project-info {
+   
+    min-height: 100vh;
+}
