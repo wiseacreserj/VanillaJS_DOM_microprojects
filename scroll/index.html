@@ -17,7 +17,7 @@
         <script src="./js/index.js" defer></script>
     </head>
     <body>
-        <header class="c-header">
+        <header id="home" class="c-header">
             <div class="l-header-container">
                 <div class="l-logo-container">
                     <div class="c-header__logo">
@@ -33,23 +33,50 @@
                 <nav class="c-nav">
                     <ul class="l-nav-container">
                         <li class="c-nav__item">
-                            <a class="c-nav__link" href="">home</a>
+                            <a class="c-nav__link" href="#home">home</a>
                         </li>
                         <li class="c-nav__item">
-                            <a class="c-nav__link" href="">about</a>
+                            <a class="c-nav__link" href="#about">about</a>
                         </li>
                         <li class="c-nav__item">
-                            <a class="c-nav__link" href="">services</a>
+                            <a class="c-nav__link" href="#services">services</a>
                         </li>
                         <li class="c-nav__item">
-                            <a class="c-nav__link" href="">tours</a>
+                            <a class="c-nav__link" href="#tours">tours</a>
                         </li>
                     </ul>
                 </nav>
             </div>
 
-            <section class="c-project-info"></section>
+            <div class="l-header-info">
+                <section class="c-info">
+                    <h1 class="c-info__title">scroll project</h1>
+                    <p class="c-info__description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Quas eos neque sunt in? Id, necessitatibus quos
+                        quisquam distinctio laudantium fugiat?
+                    </p>
+                    <a class="c-tours-link" href="#tours">explore tours</a>
+                </section>
+            </div>
         </header>
-        <main class="l-main"></main>
+        <main class="l-main">
+            <section class="c-content" id="about">
+                <h2 class="c-content__title">
+                    about <span class="c-content__span">us</span>
+                </h2>
+            </section>
+            <section class="c-content" id="services">
+                <h2 class="c-content__title">
+                    our <span class="c-content__span">services</span>
+                </h2>
+            </section>
+            <section class="c-content" id="tours">
+                <h2 class="c-content__title">
+                    featured <span class="c-content__span">tours</span>
+                </h2>
+            </section>
+        </main>
+        <footer class="footer"></footer>
     </body>
 </html>

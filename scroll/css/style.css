@@ -9,6 +9,7 @@
     --clr-black-secondary: rgb(16, 42, 66);
     --clr-gray-primary: rgb(97 125 152);
     --clr-blue-light-1: rgb(84,166,234);
+    --clr-cyan-primary: rgb(64, 207, 212);
     --bg-color-main: rgb(241, 245, 248);
     --clr-gold-main: rgb(197, 157, 95);
 }
@@ -22,15 +23,18 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .c-header {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /* width: 100vw; */
+    /* justify-content: space-between;
+    align-items: center; */
     min-height: 100vh;
     padding: 1rem 1.5rem;
-    background-image: url("../assets/img/banner.jpeg");
+    background-image: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)), url("../assets/img/banner.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;    
@@ -41,8 +45,25 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
     
 }
+
+
+.l-header-container--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+}
+
+
 
 .c-header__logo {
     height: 50px;    
@@ -73,7 +94,145 @@
     color: white;
 }
 
-.c-project-info {
-   
+.c-nav__link--clr-gray {
+    color: var(--clr-black-secondary);
+    transition: color 0.3s ease-out;
+}
+
+.c-nav__link--clr-gray:hover {
+    color: var(--clr-cyan-primary);
+}
+
+
+.l-header-info {
+    display: flex;
+    justify-content: center;
+}
+
+.c-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 640px;
     min-height: 100vh;
 }
+
+.c-info__title {
+    font-family: var(--fnt-roboto);
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    color: white;
+}
+
+.c-info__description {
+    font-family: var(--fnt-open-sans);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: white;
+    margin: 1rem 0;
+}
+
+.c-tours-link {
+    display: block;
+    font-family: var(--fnt-open-sans);
+    font-size: 0.875rem;
+    letter-spacing: var(--letter-spacing-main);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 0.75rem;
+    transition: all 0.3s ease-out;
+}
+
+.c-tours-link:hover {
+    background-color: white;
+    color: var(--clr-cyan-primary);
+}
+
+.c-content {
+    min-height: 80vh;
+}
+
+.c-content__title {
+    font-family: var(--fnt-roboto);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--clr-black-primary);
+}
+
+.c-content__span {
+    color: var(--clr-cyan-primary);
+}
+
+.footer {
+    padding: 5rem 1rem;
+    font-family: var(--fnt-open-sans);
+    font-size: 1rem;
+    letter-spacing: var(--letter-spacing-main);
+    text-align: center;
+    color: white;
+    background-color: var(--clr-black-secondary);
+}
+
+@media  screen and (max-width:800px) {
+    .c-header__menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .l-logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem 2rem;
+        font-size: 24px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .c-nav {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.7s ease-out;
+        
+    }
+
+    .l-nav-container {
+        flex-direction: column;
+        background-color: white;
+        width: 100vw;
+       
+    }
+
+    .c-nav__item {
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+    }
+
+    .c-nav--visible {
+        height: 100%;
+    }
+
+    .c-nav__link {
+        color: var(--clr-black-secondary);
+        transition: color 0.3s ease-in-out;
+    }
+
+    .c-nav__link:hover {
+        color: var(--clr-cyan-primary);
+    }
+}
+
