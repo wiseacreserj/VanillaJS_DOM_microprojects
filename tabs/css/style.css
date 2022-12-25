@@ -1,0 +1,30 @@
+:root {
+    
+    --fnt-open-sans: "Open Sans", sans-serif;
+    --fnt-roboto: "Roboto", sans-serif;
+    --fnt-arial: "Arial", sans-serif;
+    --fnt-great-vibes: "Great Vibes", sans-serif;
+    --letter-spacing-main: 0.275rem;
+    --clr-black-primary: rgb(34, 34, 34);
+    --clr-black-secondary: rgb(16, 42, 66);
+    --clr-gray-primary: rgb(97 125 152);
+    --clr-blue-light-1: rgb(84,166,234);
+    --clr-cyan-primary: rgb(64, 207, 212);
+    --bg-color-main: rgb(241, 245, 248);
+    --clr-gold-main: rgb(197, 157, 95);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
