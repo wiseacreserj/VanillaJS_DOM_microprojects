@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Menu</title>
+        <title>Tabs</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -34,12 +34,18 @@
             </div>
             <div class="tabs">
                 <div class="tabs__nav">
-                    <button class="tabs__nav-btn">history</button>
-                    <button class="tabs__nav-btn">vision</button>
-                    <button class="tabs__nav-btn">goals</button>
+                    <button class="tabs__nav-btn" data-tab="#tab1">
+                        history
+                    </button>
+                    <button class="tabs__nav-btn" data-tab="#tab2">
+                        vision
+                    </button>
+                    <button class="tabs__nav-btn" data-tab="#tab3">
+                        goals
+                    </button>
                 </div>
                 <div class="tabs__content">
-                    <div class="tabs__item">
+                    <div class="tabs__item" id="tab1">
                         <h4>history</h4>
                         <p>
                             I'm baby wolf pickled schlitz try-hard normcore
@@ -53,7 +59,7 @@
                             single-origin coffee art party migas plaid pop-up.
                         </p>
                     </div>
-                    <div class="tabs__item">
+                    <div class="tabs__item" id="tab2">
                         <h4>vision</h4>
                         <p>
                             Man bun PBR&B keytar copper mug prism, hell of
@@ -69,7 +75,7 @@
                             live-edge schlitz narwhal.
                         </p>
                     </div>
-                    <div class="tabs__item">
+                    <div class="tabs__item" id="tab3">
                         <h4>goals</h4>
                         <p>
                             Chambray authentic truffaut, kickstarter brunch
