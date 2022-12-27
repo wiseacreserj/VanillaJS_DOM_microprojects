@@ -7,9 +7,11 @@
     --letter-spacing-main: 0.275rem;
     --clr-black-primary: rgb(34, 34, 34);
     --clr-black-secondary: rgb(16, 42, 66);
-    --clr-gray-primary: rgb(97 125 152);
-    --clr-gray-secondary: rgb(218 226 236);
-    --clr-blue-light-1: rgb(84,166,234);
+    --clr-gray-1: rgb(97 125 152);
+    --clr-gray-2: rgb(130, 154, 176);
+    --clr-gray-3: rgb(218 226 236);
+    --clr-blue-light-1: rgb(26, 106, 162);
+    --clr-blue-light-2: rgb(84,166,234);
     --clr-cyan-primary: rgb(64, 207, 212);
     --bg-color-main: rgb(241, 245, 248);
     --clr-gold-main: rgb(197, 157, 95);
@@ -36,26 +38,87 @@ body {
 .l-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
     gap: 0 2rem;
     margin: 0 auto;
-    width: 95vw;
     max-width: 1170px;
+    padding: 4rem 1.5rem;
 }
 
-.c-img-container {
-    /* grid-column: 1 / 2;
-    border-radius: 8px; */
-}
 
 .c-img-container__image {
     width: 100%;
-   /*  height: 20rem; */
     object-fit: cover;
-    /* border-radius: 8px; */
+    
 }
 
+.c-giveaway {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.c-giveaway__title {
+    font-family: var(--fnt-roboto);
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-main);
+    color: var(--clr-blue-light-1);
+}
+
+.c-giveaway__deadline {
+    font-family: var(--fnt-roboto);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-main);
+    color: var(--clr-black-secondary);
+}
+
+.c-giveaway__info {
+    font-family: var(--fnt-open-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: var(--clr-gray-2);
+}
+
+.l-date-tiles {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.c-date-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--clr-black-secondary);
+    color: white;
+    margin-right: 1rem;
+}
+
+.c-date-tile__digit {
+    font-family: var(--fnt-roboto);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.c-date-tile__text {
+    font-family: var(--fnt-open-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-main);
+}
 
 @media screen and (max-width: 992px) {
-  
+    .l-content {
+        display: block;
+    }
+    
 }

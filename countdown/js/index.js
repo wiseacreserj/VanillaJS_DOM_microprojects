@@ -1,27 +1,62 @@
+//Elements
+
+const deadlineElement = document.querySelector(".c-giveaway__deadline");
+const daysELement = document.querySelector(".days");
+const hoursELement = document.querySelector(".hours");
+const minsELement = document.querySelector(".mins");
+const secsELement = document.querySelector(".secs");
+
+//days and months collections
+
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+];
+
 const today = new Date();
 
-const tenDays = new Date();
-tenDays.setDate(today.getDate() + 10);
+const deadline = new Date();
+deadline.setDate(today.getDate() + 14);
+deadline.setHours(11);
+deadline.setMinutes(30);
 
-//today.setDate(today.getDate() + 10);
+const deadlineString = `Giveaway Ends On ${
+    days[deadline.getDay()]
+}, ${deadline.getDate()} ${
+    months[deadline.getMonth()]
+} ${deadline.getFullYear()} ${deadline.getHours()}:${deadline.getMinutes()}am`;
 
-console.log("today:", today);
-console.log("10 days:", tenDays);
+deadlineElement.innerText = deadlineString;
 
-//const interval = tenDays - today
-
-/* setInterval(() => {
+setInterval(() => {
     const now = new Date();
-    let interval = new Date(tenDays - now);
+    const interval = new Date(deadline - now);
     const days = interval.getDate();
     const hours = interval.getHours();
-    const minutes = interval.getMinutes();
-    const seconds = interval.getSeconds();
+    const mins = interval.getMinutes();
+    const secs = interval.getSeconds();
 
-    console.log("days", days);
-    console.log("hours", hours);
-    console.log("minutes", minutes);
-    console.log("seconds", seconds);
-
-    console.log(interval.getSeconds());
-}, 1000); */
+    daysELement.textContent = days;
+    hoursELement.textContent = hours;
+    minsELement.textContent = mins;
+    secsELement.textContent = secs;
+}, 1000);
