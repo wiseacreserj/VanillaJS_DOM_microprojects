@@ -10,3 +10,27 @@ const data = [
     "Pellentesque a lectus lacus. Integer in ornare purus, in elementum quam. Phasellus sed ex non purus tempus auctor. Fusce maximus sem in massa mollis rutrum. Fusce porta, mauris pharetra efficitur pharetra, dui tellus gravida nunc, eu sagittis leo mi vel ante. Fusce eleifend, nisl eget molestie commodo, diam elit tempor massa, eu laoreet odio justo a leo. Proin sed ipsum et eros placerat imperdiet vel id lorem. Nulla facilisi. Donec porttitor in massa ut luctus. Nunc gravida a ligula in lacinia. Nullam dapibus quis ipsum eu rhoncus. Praesent nec urna pretium, fermentum dolor a, pretium ligula. Phasellus pharetra, nibh et placerat dapibus, lectus augue eleifend magna, vel pellentesque eros nisl in neque. Duis interdum ultricies turpis vitae luctus. Fusce tortor libero, fringilla nec mattis sit amet, molestie nec neque.",
     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer scelerisque lacus sit amet varius pharetra. Fusce ut quam ut nisi pretium suscipit nec sit amet sapien. Praesent posuere augue eget orci iaculis blandit. Sed quis sem in purus ultrices tempus. Phasellus hendrerit diam tincidunt, sollicitudin nisl eu, consectetur dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut placerat orci, sit amet ullamcorper libero. Maecenas et ultricies sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin viverra quam lectus, nec placerat tellus viverra sed. In ullamcorper semper ex, bibendum feugiat odio blandit semper.",
 ];
+
+const form = document.querySelector(".c-generator-form");
+const input = document.querySelector(".c-generator-form__input");
+const container = document.querySelector(".l-paragraphs");
+
+const randomHelper = () => {
+    return Math.floor(Math.random() * data.length);
+};
+
+const generateHandler = (event) => {
+    event.preventDefault();
+    container.innerHTML = "";
+    const count = input.value;
+    for (let counter = 1; counter <= count; counter++) {
+        let index = randomHelper();
+
+        const paragraph = document.createElement("p");
+        paragraph.classList.add("c-paragraph");
+        paragraph.textContent = data[index];
+        container.append(paragraph);
+    }
+};
+
+form.addEventListener("submit", generateHandler);
