@@ -1,0 +1,137 @@
+:root {
+    
+    --fnt-open-sans: "Open Sans", sans-serif;
+    --fnt-roboto: "Roboto", sans-serif;
+    --fnt-arial: "Arial", sans-serif;
+    --fnt-great-vibes: "Great Vibes", sans-serif;
+    --letter-spacing-primary: 0.275rem;
+    --letter-spacing-secondary: 0.1rem;
+    --clr-black-primary: rgb(34, 34, 34);
+    --clr-black-secondary: rgb(16, 42, 66);
+    --clr-gray-1: rgb(97 125 152);
+    --clr-gray-2: rgb(130, 154, 176);
+    --clr-gray-3: rgb(218 226 236);
+    --clr-blue-light-1: rgb(26, 106, 162);
+    --clr-blue-light-2: rgb(84,166,234);
+    --clr-cyan-primary: rgb(64, 207, 212);
+    --bg-color-main: rgb(241, 245, 248);
+    --clr-gold-main: rgb(197, 157, 95);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--bg-color-main);
+}
+
+.l-content {
+    display: grid;
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 4rem 1.5rem;
+    justify-items: center;
+    background-color: white;
+}
+
+.c-title {
+    font-family: var(--fnt-roboto);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-primary);
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--clr-black-secondary);
+}
+
+.c-add-item-form {
+    display: flex;
+}
+
+.c-add-item-form__input {
+    width: 28rem;
+    height: 2rem;
+    font-family: var(--fnt-arial);
+    font-size: 1.25rem;
+    font-weight: 400;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    padding-left: 0.5rem;
+    background-color: var(--bg-color-main);
+}
+
+.c-add-item-form__submit-btn {
+    height: 2rem;
+    display: inline-block;
+    font-family: var(--fnt-arial);
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-secondary);
+    color: var(--clr-black-secondary);
+    padding: 0.5rem 0.75rem;
+    background-color: var(--clr-blue-light-2);
+    border: none;
+    border-radius: 0 8px 8px 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.c-add-item-form__submit-btn:hover {
+    opacity: 0.7;
+}
+
+ .l-grocery__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+ }
+.c-grocery-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 33rem;
+    font-family: var(--fnt-open-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: var(--clr-gray-1);
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+.c-grocery-item__btn {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.c-grocery-item__btn.edit-btn {
+    color: green;
+}
+
+.c-grocery-item__btn.remove-btn {
+    color: red;
+}
+
+@media screen and (max-width:800px) {
+    html {
+        font-size: 14px;
+    }
+}

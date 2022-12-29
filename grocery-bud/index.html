@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grocery Bud</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./assets/fonts/css/all.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/index.js" defer></script>
+    </head>
+    <body>
+        <div class="l-content">
+            <div class="c-alert">Error: add item</div>
+            <h1 class="c-title">grocery bud</h1>
+            <form class="c-add-item-form">
+                <input
+                    class="c-add-item-form__input"
+                    type="text"
+                    name="text"
+                    id="text"
+                    placeholder="e.g. eggs"
+                    value=""
+                    min="1"
+                    max="100"
+                />
+
+                <button class="c-add-item-form__submit-btn">submit</button>
+            </form>
+            <div class="l-grocery-list">
+                <div class="c-grocery-item">
+                    <p class="c-grocery-item__text">Sausages 100 items</p>
+                    <div class="l-grocery-item__buttons">
+                        <button class="c-grocery-item__btn edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="c-grocery-item__btn remove-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="c-grocery-item">
+                    <p class="c-grocery-item__text">Sausages 100 items</p>
+                    <div class="l-grocery-item__buttons">
+                        <button class="c-grocery-item__btn edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="c-grocery-item__btn remove-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="c-clear-items-btn">clear items</button>
+            </div>
+        </div>
+    </body>
+</html>
