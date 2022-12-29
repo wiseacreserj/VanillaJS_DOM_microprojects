@@ -8,6 +8,10 @@
     --letter-spacing-secondary: 0.1rem;
     --clr-black-primary: rgb(34, 34, 34);
     --clr-black-secondary: rgb(16, 42, 66);
+    --clr-alert-danger-text: rgb(114 28 36);
+    --clr-alert-danger-bg: rgb(248 215 218);
+    --clr-alert-success-text: rgb(21 87 36);
+    --clr-alert-success-bg: rgb(212 237 218);
     --clr-gray-1: rgb(97 125 152);
     --clr-gray-2: rgb(130, 154, 176);
     --clr-gray-3: rgb(218 226 236);
@@ -39,11 +43,35 @@ body {
 .l-content {
     display: grid;
     gap: 2rem;
-    margin: 0 auto;
+    margin: 4rem auto;
     max-width: 640px;
     padding: 4rem 1.5rem;
     justify-items: center;
     background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 var(--clr-gray-1);
+    
+}
+
+.c-alert {
+    font-family: var(--fnt-open-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    width: 33rem;
+    height: 1.25rem;
+    text-align: center;
+    border-radius: 4px;
+    letter-spacing: var(--letter-spacing-secondary);
+}
+
+.c-alert.danger {
+    background-color: var(--clr-alert-danger-bg);
+    color: var(--clr-alert-danger-text);
+}
+
+.c-alert.success {
+    background-color: var(--clr-alert-success-bg);
+    color: var(--clr-alert-success-text);
 }
 
 .c-title {
@@ -102,15 +130,24 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 33rem;
+    max-width: 33rem;
     font-family: var(--fnt-open-sans);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
     color: var(--clr-gray-1);
-    text-align: center;
-    overflow: hidden;
     
+}
+
+.c-grocery-item__text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 30rem;
+}
+
+.l-grocery-item__buttons {
+    display: flex;
 }
 
 .c-grocery-item__btn {
@@ -130,8 +167,58 @@ body {
     color: red;
 }
 
+.c-clear-items-btn {
+    font-family: var(--fnt-open-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    background: transparent;
+    color: var(--clr-alert-danger-text);
+    border: none;
+    letter-spacing: var(--letter-spacing-primary);
+    cursor: pointer;
+
+}
+
+
+
 @media screen and (max-width:800px) {
     html {
         font-size: 14px;
     }
+
+    .l-content {
+        margin: 4rem;
+    }
+
+    .c-alert {
+        width: 17rem;
+    }
+
+    .c-add-item-form__input {
+        width: 17rem;
+    }
+
+    .c-grocery-item__text {
+        width: 20rem;
+    }
 }
+
+@media screen and (max-width:600px) {
+    .l-content {
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+
+    .c-alert {
+        width: 14rem;
+    }
+
+    .c-add-item-form__input {
+        width: 14rem;
+    }
+
+    .c-grocery-item__text {
+        width: 17rem;
+    }
+} 
