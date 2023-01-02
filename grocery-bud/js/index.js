@@ -13,8 +13,6 @@ let listElement = document.querySelector(".l-grocery-list");
 const alertElement = document.querySelector(".c-alert");
 const clearListBtn = document.querySelector(".c-clear-items-btn");
 
-//console.log(JSON.parse(groceryList));
-
 //functions
 
 const generateId = (length = 15) => {
