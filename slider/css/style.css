@@ -38,6 +38,7 @@ html {
 
 body {
     background-color: var(--bg-color-main);
+   
 }
 
 .l-content {
@@ -54,11 +55,11 @@ body {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    width: 80vw;
-    height: 40vh;
-    border: 3px solid var(--clr-blue-light-1);
+    width: 100%;
+    height: 60vh;
+    border: 3px solid var(--clr-black-secondary);
     border-radius: 8px;
-    background-color: var(--clr-blue-light-2);
+    background-color: var(--clr-black-secondary);
 }
 
 .c-slider__slide {
@@ -66,6 +67,7 @@ body {
     display: block;
     min-width: 100%; 
     height: 100%;
+    transition: transform 0.3s ease-out;
 
 }
 
@@ -77,5 +79,61 @@ body {
 }
 
  .c-slider__index {
-   /*  position: absolute; */
+   position: absolute;
+   bottom: 10px;
+   right: 20px ;
+   
+   text-align: center;
+   color: white;
+   font-size: 2rem;
+ }
+
+ .c-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+ }
+
+ .c-buttons__btn {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-family: var(--fnt-arial);
+    font-size: 1.75rem;
+    color: var(--clr-gray-1);
+    background: transparent;
+    text-transform: capitalize;
+    border: none;
+    transition: color 0.3s ease-out;
+ }
+
+ .c-buttons__btn:hover {
+    color: var(--clr-black-secondary)
+ }
+
+
+ @media  screen and (max-width:992px) {
+    .c-slider {
+        height: 50vh;
+    }
+ }
+
+
+ @media  screen and (max-width:768px) {
+    .c-slider {
+        height: 45vh;
+    }
+ }
+
+
+ @media  screen and (max-width:650px) {
+    .c-slider {
+        height: 40vh;
+    }
+ }
+
+ @media  screen and (max-width:500px) {
+    .c-slider {
+        height: 35vh;
+    }
  }
