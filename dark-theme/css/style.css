@@ -1,0 +1,70 @@
+:root {
+    
+    --fnt-open-sans: "Open Sans", sans-serif;
+    --fnt-roboto: "Roboto", sans-serif;
+    --fnt-arial: "Arial", sans-serif;
+    --fnt-great-vibes: "Great Vibes", sans-serif;
+    --letter-spacing-primary: 0.275rem;
+    --letter-spacing-secondary: 0.1rem;
+    --clr-black-primary: rgb(34, 34, 34);
+    --clr-black-secondary: rgb(16, 42, 66);
+    --clr-alert-danger-text: rgb(114 28 36);
+    --clr-alert-danger-bg: rgb(248 215 218);
+    --clr-alert-success-text: rgb(21 87 36);
+    --clr-alert-success-bg: rgb(212 237 218);
+    --clr-gray-1: rgb(97 125 152);
+    --clr-gray-2: rgb(130, 154, 176);
+    --clr-gray-3: rgb(218 226 236);
+    --clr-blue-light-1: rgb(26, 106, 162);
+    --clr-blue-light-2: rgb(84,166,234);
+    --clr-cyan-primary: rgb(64, 207, 212);
+    --bg-color-main: rgb(241, 245, 248);
+    --clr-gold-main: rgb(197, 157, 95);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--bg-color-main);
+   
+}
+
+.l-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: 90vw;
+    max-width: 900px;
+    margin: 4rem auto;
+    
+}
+
+
+
+ @media  screen and (max-width:992px) {
+ 
+ }
+
+ @media  screen and (max-width:768px) {
+      
+ }
+
+ @media  screen and (max-width:650px) {
+   
+ }
+
+ @media  screen and (max-width:500px) {
+    
+ }
