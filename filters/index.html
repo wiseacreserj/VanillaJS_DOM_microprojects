@@ -14,9 +14,33 @@
 
         <link rel="stylesheet" href="./assets/fonts/css/all.css" />
         <link rel="stylesheet" href="./css/style.css" />
-        <script src="./js/index.js" defer></script>
+        <script src="./js/index.js" type="module" defer></script>
+        <script src="./js/data.js" type="module" defer></script>
     </head>
     <body>
-        <div class="l-content"></div>
+        <div class="l-content">
+            <div class="c-filters">
+                <form class="c-filters__form">
+                    <input
+                        type="text"
+                        class="c-filters__input"
+                        placeholder="search..."
+                    />
+                </form>
+                <p class="c-filters__title">Company</p>
+                <ul class="c-filters__list">
+                    <li class="c-filters__item" data-company="all">all</li>
+                    <li class="c-filters__item" data-company="ikea">Ikea</li>
+                    <li class="c-filters__item" data-company="marcos">
+                        Marcos
+                    </li>
+                    <li class="c-filters__item" data-company="caressa">
+                        Caressa
+                    </li>
+                    <li class="c-filters__item" data-company="liddy">Liddy</li>
+                </ul>
+            </div>
+            <div class="l-products"></div>
+        </div>
     </body>
 </html>
