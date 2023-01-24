@@ -1,15 +1,16 @@
 //API
 
-import { fetchCocktailsByName, fetchDrinkById } from "./api.js";
+import { fetchCocktailsByName } from "./api.js";
 
 //Elements
 const cocktailsContainer = document.querySelector(".l-cocktails");
-const spiner = document.querySelector(".c-spinner");
+const spinner = document.querySelector(".c-spinner");
+const input = document.querySelector(".c-search-form__input");
 
 //Functions
 
 const hideSpinner = () => {
-    spiner.style.display = "none";
+    spinner.style.display = "none";
 };
 
 const renderCocktails = (cocktails) => {
@@ -26,7 +27,7 @@ const renderCocktails = (cocktails) => {
                 data-id=${id}
             >
                 <div class="c-cocktail-card" data-id=${id}>
-                    <div class="c-coctail-card__img-container">
+                    <div class="c-cocktail-card__img-container">
                         <img
                             src=${imgURL}
                             alt=""
@@ -49,10 +50,18 @@ const renderCocktails = (cocktails) => {
             event.preventDefault();
             const link = event.currentTarget;
             localStorage.setItem("drinkId", link.dataset.id);
-            window.location.replace(link.href);
+            window.location = link.href;
         });
     });
 };
+
+//Assign listeners
+
+input.addEventListener("input", async () => {
+    const data = await fetchCocktailsByName(input.value);
+    hideSpinner();
+    renderCocktails(data.drinks);
+});
 
 const initApp = async () => {
     const data = await fetchCocktailsByName();

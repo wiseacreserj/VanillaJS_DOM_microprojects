@@ -9,14 +9,12 @@ export const SINGLE_DRINK_URL =
 
 export const fetchCocktailsByName = async (cocktailName = "a") => {
     const response = await fetch(`${SERACH_BY_NAME_URL}${cocktailName}`);
-    console.log(response);
     const data = await response.json();
     return data;
 };
 
 export const fetchDrinkById = async (id) => {
     const response = await fetch(`${SINGLE_DRINK_URL}${id}`);
-    console.log(response);
     const data = await response.json();
-    return data;
+    return data.drinks[0];
 };

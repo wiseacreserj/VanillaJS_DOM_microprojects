@@ -71,10 +71,33 @@ a {
 }
 
 .c-page-title__text {
-    font-family: var(--fnt-segoe-ui);
+    font-family: var(--fnt-roboto);
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: var(--letter-spacing-secondary);
+    text-transform: capitalize;
+    color: var(--clr-black-secondary);
+}
+
+/*Form section*/
+
+.c-search-form {
+    place-self: center;
+    margin-bottom: 2rem;
+}
+
+.c-search-form__input {
+    width: 80vw;
+    max-width: 500px;
+    font-family: var(--fnt-arial);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.c-search-form__input::placeholder {
+    font-family: var(--fnt-arial);
+    font-size: 1rem;
     text-transform: capitalize;
 }
 
@@ -106,7 +129,7 @@ a {
 .l-cocktails {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 3rem;
 }
 
 .c-error {
@@ -120,8 +143,11 @@ a {
 
 .c-cocktail-card {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
+    border: 10px solid white;
+    border-radius: 5px;
 }
 
 .c-cocktail-card__img-container {
@@ -131,63 +157,70 @@ a {
 .c-cocktail-card__img {
     display: block;
     width: 100%;
-    height: 10rem;
+    height: 15rem;
     object-position: center;
     object-fit: cover;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 .c-cocktail-card__name {
-    font-family: var(--fnt-segoe-ui);
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.125rem;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
     letter-spacing: var(--letter-spacing-secondary);
-    text-transform: capitalize;
-    padding: 0.5rem 0;
-    color: var(--clr-gray-4);
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    background-color: var(--clr-black-primary);
+    color: white;
 }
 
 /*Single product section*/
 
-.l-product {
+.l-drink {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem;
 }
 
-.c-product-img {
+.c-drink-img {
     width: 100%;
     height: 60vh;
     object-fit: cover;
+    border: 10px solid white;
+    border-radius: 5px;
 }
 
-.c-product {
+.c-drink {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
-    font-family: var(--fnt-segoe-ui);
+    row-gap: 1rem;
+    font-family: var(--fnt-open-sans);
     padding-top: 1rem;
 }
 
-.c-product__title {
-    font-size: 2rem;
-    font-weight: 400;
+.c-drink__title {
+    font-family: var(--fnt-roboto);
+    font-size: 2.5rem;
+    font-weight: 700;
     text-transform: capitalize;
     color: var(--clr-black-secondary);
     letter-spacing: var(--letter-spacing-secondary);
 }
 
-.c-product__company {
+.c-drink__instruction {
     display: block;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 400;
-    text-transform: capitalize;
+    line-height: 1.5;
     color: var(--clr-gray-1);
-    letter-spacing: var(--letter-spacing-secondary);
 }
 
-.c-product__price {
+/* .c-product__price {
     display: block;
     font-size: 1rem;
     font-weight: 400;
@@ -198,9 +231,19 @@ a {
 .c-product__colors {
     display: flex;
     gap: 0.5rem;
+} */
+
+.c-ingredients {
+    list-style-type: none;
+    line-height: 1.5;
+    color: var(--clr-black-secondary);
 }
 
-.c-product__color-item {
+.c-ingredients i {
+    margin-right: 0.5rem;
+}
+
+/* .c-product__color-item {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -212,8 +255,8 @@ a {
     color: var(--clr-black-secondary);
     line-height: 1.75rem;
 }
-
-.c-add-to-cart-btn {
+ */
+/* .c-add-to-cart-btn {
     display: block;
     max-width: 120px;
     font-family: var(--fnt-arial);
@@ -232,41 +275,40 @@ a {
 .c-add-to-cart-btn:hover {
     background-color: rgb(60 55 153);
 }
-
+ */
 .c-home-link {
     display: block;
-    max-width: 150px;
+    max-width: 185px;
     font-family: var(--fnt-segoe-ui);
-    font-size: 1rem;
-    text-transform: capitalize;
-    letter-spacing: var(--letter-spacing-secondary);
-    margin-bottom: 3rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-primary);
+    margin-top: 1rem;
     padding: 0.75rem 1rem;
     color: white;
     border: none;
-    border-radius: 5px;
-    background-color: rgb(100 92 255);
+    border-radius: 8px;
+    background-color: rgb(73, 166, 233);
     cursor: pointer;
     transition: all 0.3s ease-out;
-    place-self: center;
 }
 
 .c-home-link:hover {
-    background-color: rgb(60 55 153);
+    background-color: rgb(6 50 81);
 }
 
 @media screen and (max-width: 1024px) {
-    .l-products {
+    .l-cocktails {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .c-product-card__img {
+    .c-cocktail-card__img {
         height: 12rem;
     }
 }
 
 @media screen and (max-width: 992px) {
-    .c-product-img {
+    .c-cocktail-img {
         width: 100%;
         height: 50vh;
         object-fit: cover;
@@ -274,20 +316,20 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    .l-products {
+    .l-cocktails {
         grid-template-columns: repeat(1, 1fr);
     }
-    .c-product-card__img {
+    .c-cocktail-card__img {
         height: 15rem;
     }
 
-    .l-product {
+    .l-drink {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
     }
 
-    .c-product-img {
+    .c-drink-img {
         width: 100%;
         height: 45vh;
         object-fit: cover;
@@ -298,11 +340,11 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-    .c-product-card__img {
+    .c-cocktail-card__img {
         height: 12rem;
     }
 
-    .c-product-img {
+    .c-drink-img {
         width: 100%;
         height: 40vh;
         object-fit: cover;
