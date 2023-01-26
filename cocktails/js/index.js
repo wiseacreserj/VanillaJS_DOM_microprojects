@@ -6,11 +6,25 @@ import { fetchCocktailsByName } from "./api.js";
 const cocktailsContainer = document.querySelector(".l-cocktails");
 const spinner = document.querySelector(".c-spinner");
 const input = document.querySelector(".c-search-form__input");
+const error = document.querySelector(".c-error");
 
 //Functions
 
 const hideSpinner = () => {
     spinner.style.display = "none";
+};
+
+const showSpinner = () => {
+    spinner.style.display = "block";
+};
+
+const showEror = () => {
+    error.style.display = "block";
+    cocktailsContainer.innerHTML = "";
+};
+
+const hideEror = () => {
+    error.style.display = "none";
 };
 
 const renderCocktails = (cocktails) => {
@@ -58,7 +72,14 @@ const renderCocktails = (cocktails) => {
 //Assign listeners
 
 input.addEventListener("input", async () => {
+    hideEror();
+    showSpinner();
     const data = await fetchCocktailsByName(input.value);
+    if (!data.drinks) {
+        hideSpinner();
+        showEror();
+        return;
+    }
     hideSpinner();
     renderCocktails(data.drinks);
 });
