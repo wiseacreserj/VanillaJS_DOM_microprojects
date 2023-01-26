@@ -240,7 +240,7 @@ a {
 
 .c-home-link {
     display: block;
-    max-width: 185px;
+    align-self: baseline;
     font-family: var(--fnt-segoe-ui);
     font-size: 14px;
     text-transform: uppercase;
